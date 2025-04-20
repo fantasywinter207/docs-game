@@ -119,7 +119,8 @@ class InGameUI {
                         rect(x, y + 30, textWidth(item.description), 20);
                         fill(0);
                         textSize(24)
-                        text(item.description, x, y + 30);
+                        text(item.label, x, y + 30);
+                        text(item.description, x, y + 50);
                     }
 
                     iconCount++;
