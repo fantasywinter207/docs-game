@@ -1,7 +1,13 @@
 class BuffController {
-    static instance = null;
+    static instance = undefined;
     static shopBuff = [];
     static messageStack = []
+    static messageList = []
+    #messageTimer = setInterval(() => {
+        if (BuffController.messageList.length === 0) return;
+        console.log(BuffController.messageList)
+        BuffController.messageStack.push(BuffController.messageList.shift())
+    }, 1000);
     constructor(targetCharacter) {
         if (BuffController.instance) return BuffController.instance;
         BuffController.instance = this;
@@ -173,7 +179,7 @@ class BuffController {
      * @param buff
      */
     showBuffInfo(buff) {
-        BuffController.messageStack.push(buff.description ?? "")
+        BuffController.messageList.push(buff.description ?? "");
     }
 
 }

@@ -94,7 +94,7 @@ class InGameUI {
 
     drawBuffIcon() {
         push();
-        if (BuffController.instance) {
+        if (BuffController.instance) { // 每 10 帧执行一次
             const buffController = BuffController.instance;
             const iconSize = 32; // 图标大小
             const iconSpacing = 8; // 图标间距
@@ -142,9 +142,6 @@ class InGameUI {
         const scrollSpeed = 1;
         if (BuffController.instance) {
             if (BuffController.messageStack.length > 0) {
-                while (BuffController.messageStack.length > 3) {
-                    BuffController.messageStack.shift()
-                }
                 fill(255); // 设置文本颜色为白色
                 textSize(24); // 设置文本大小
                 let yOffset = 50; // 文本初始垂直偏移量
@@ -158,6 +155,10 @@ class InGameUI {
                     // 更新消息的垂直位置
                     yOffset += 50;
                     yOffset -= scrollSpeed;
+
+                }
+                while (BuffController.messageStack.length > 3) {
+                    BuffController.messageStack.shift()
                 }
             }
         }

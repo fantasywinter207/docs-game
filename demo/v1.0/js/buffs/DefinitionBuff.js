@@ -20,7 +20,6 @@ class GoldBuff extends Buff {
             setTimeout(() => {
                 this.player.info.gold += this.gold;
                 this.isTime = true;
-                BuffController.instance.showBuffInfo(this)
             }, this.second)
             this.isTime = false;
         }
