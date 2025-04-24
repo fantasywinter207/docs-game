@@ -61,10 +61,12 @@ class PlayerControl {
     mousePressed() {
         //shoot
         this.shootKey = true;
+        this.#player.isShoot = true;
     }
 
     mouseReleased() {
         this.shootKey = false;
+        this.#player.isShoot = false;
     }
 
     shoot(xSpeed, ySpeed) {

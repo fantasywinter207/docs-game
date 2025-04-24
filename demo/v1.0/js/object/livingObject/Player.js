@@ -34,6 +34,7 @@ class Player extends BasicObject {
         this.isFlashing = false;
         this.flashDuration = 150; // 闪烁持续时间(毫秒)
         this.flashStartTime = 0;
+        this.isShoot = false;
     }
 
     updateAnimation() {

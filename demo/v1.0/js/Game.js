@@ -1002,6 +1002,7 @@ class Game {
         this.#pollution.increasePollution("skill");
 
         this.#player.skillCD = this.#player.maxSkillCD;
+        this.#player.pets = this.#pets;
 
         // console.log("Pet =========================");
     }

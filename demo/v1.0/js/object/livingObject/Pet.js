@@ -77,6 +77,7 @@ class Pet extends BasicObject {
         if (this.isFlashing) {
             push();
             tint(255, 0, 0); // 应用红色染色
+            debugger
             image(this.frames[this.currentFrame], 
                   this.xCoordinate, this.yCoordinate, 
                   this.xSize * 2, this.ySize * 2);

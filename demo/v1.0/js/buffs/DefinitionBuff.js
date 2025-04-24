@@ -184,4 +184,41 @@ class IncreasesPlayerMovementSpeed extends Buff {
 
 }
 
+class Shrapnel extends Buff {
+    constructor() {
+        super({
+            label: "shrapnel",
+            price: 600,
+            effectDesc: "子母弹攻击",
+            imgPath: frames.buff.get("health")
+        });
+    }
+
+    start() {
+        
+    }
+
+    update(curTime) {
+        if (this.player.isShoot) {
+            console.log(this.player);
+            
+            // const bullet = new Bullet(
+            //     xCoordinate + xSpeed * 10,
+            //     yCoordinate + ySpeed * 10,
+            //     xSpeed,
+            //     ySpeed,
+            //     bulletType,
+            //     bulletMoveType,
+            //     attackPower,
+            //     explosionSize,
+            //     bulletSize,
+            //     bulletSpeed,
+            //     (bullet) => this.game.findBulletClosestTarget(bullet)
+            // );
+        }
+        
+    }
+
+}
+
 

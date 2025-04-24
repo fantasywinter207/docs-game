@@ -112,7 +112,8 @@ class ShopUI {
             new IncreasesBulletSpeed(),
             new IncreasesHealth(),
             new IncreasesMaxHealth(),
-            new IncreasesPlayerMovementSpeed()
+            new IncreasesPlayerMovementSpeed(),
+            new Shrapnel()
         ];
 
         this.#isInit = true;
