@@ -149,21 +149,16 @@ class PlayerControl {
 
     updateShoot() {
         if (this.shootKey && millis() - this.lastShootTime >= this.shootCD * 1000) {
-            this.#player.isUpdateShoot = true;
             let logicX = map(mouseX, 0, width, 0, logicWidth);
             let logicY = map(mouseY, 0, height, 0, logicHeight);
             let distance = dist(this.#player.xCoordinate, this.#player.yCoordinate, logicX, logicY);
             let shootX = (logicX - this.#player.xCoordinate) / distance;
             let shootY = (logicY - this.#player.yCoordinate) / distance;
-            this.#player.shootX = shootX;
-            this.#player.shootY = shootY;
             this.shoot(shootX, shootY);
             const shrapnel = BuffController.instance.getBuffByName("shrapnel");
             if (shrapnel) {
                 shrapnel.addBulletCount.bind(this)(shootX, shootY, this.shoot)
             }
-        } else {
-            this.#player.isUpdateShoot = false;
         }
     }
 
