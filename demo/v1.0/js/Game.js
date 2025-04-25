@@ -471,6 +471,10 @@ class Game {
                     } else {
                         this.#pollution.increasePollution("enemy_kill", enemy.maxHP);
                     }
+                    const healthAndPower = this.#playerBuffController.getBuffByName('health and power')
+                    if (healthAndPower) {
+                        healthAndPower.updatePlayerInfo();
+                    }
                     this.#enemies.splice(i, 1);
                 } else {
                     enemy.enemyAI(this.#player.xCoordinate, this.#player.yCoordinate, enemy);

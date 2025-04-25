@@ -212,7 +212,23 @@ class Shrapnel extends Buff {
             shootCallBack.bind(this)(x, y + 0.5);
         }
     }
+}
 
+class IncreaseHealtAndPower extends Buff{
+    constructor() {
+        super({
+            label: "health and power",
+            price: 100,
+            effectDesc: "增加生命值和攻击力",
+            imgPath: frames.buff.get("health")
+        })
+    }
+    updatePlayerInfo() {
+        this.player.HP = this.player.HP === this.player.HPmax
+            ? this.player.HP
+            : this.player.HP + 2;
+            this.player.equipment.getCurrentWeapon().attackPower += 1;
+    }
 
 }
 

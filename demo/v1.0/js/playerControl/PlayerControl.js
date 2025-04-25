@@ -157,7 +157,7 @@ class PlayerControl {
             this.shoot(shootX, shootY);
             const shrapnel = BuffController.instance.getBuffByName("shrapnel");
             if (shrapnel) {
-                shrapnel.addBulletCount.bind(this)(shootX, shootY, this.shoot)
+                shrapnel.addBulletCount.bind(this)(shootX, shootY, this.shoot);
             }
         }
     }

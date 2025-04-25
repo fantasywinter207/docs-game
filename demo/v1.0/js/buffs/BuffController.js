@@ -144,7 +144,8 @@ class BuffController {
     getBuffById(id) {
         const buff = this.activeBuffList.get(id)
         if (buff) return buff;
-        throw new Error(`Not found buff by arguments: ${id}`)
+        console.error(`Not found buff by id: ${id}`)
+        return null;
     }
 
     getBuff(obj) {
@@ -153,7 +154,8 @@ class BuffController {
                 return item;
             }
         }
-        throw new Error(`Not found buff by object${obj.toString()}`)
+        error(`Not found buff by object: ${obj.toString()}`);
+        return null;
     }
 
     getBuffByKey(key) {
@@ -171,7 +173,8 @@ class BuffController {
                 return item;
             }
         }
-        throw new Error(`Not found buff by name: ${name}`)
+        console.error(`Not found buff by name: ${name}`);
+        return null;
     }
 
     /**
