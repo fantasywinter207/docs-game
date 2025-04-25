@@ -194,30 +194,25 @@ class Shrapnel extends Buff {
         });
     }
 
-    start() {
-        
+    /**
+     * 
+     * @param {Number} value 射击的数量 
+     * @param {Number} x x坐标
+     * @param {Number} y y坐标
+     * @param {Function} callback 设计方法 
+     * @param {Class} that 设计方法的上下文
+     */
+    addBulletCount(x, y, shootCallBack, value = 1, that = null) {
+        // 检查 value 是否为有效的数字，如果不是则使用默认值 1
+        if (typeof value!== 'number' || isNaN(value)) {
+            value = 1;
+        }
+        // 循环调用回调函数
+        for (let i = 0; i < value; i++) {
+            shootCallBack.bind(this)(x, y + 0.5);
+        }
     }
 
-    update(curTime) {
-        if (this.player.isShoot) {
-            console.log(this.player);
-            
-            // const bullet = new Bullet(
-            //     xCoordinate + xSpeed * 10,
-            //     yCoordinate + ySpeed * 10,
-            //     xSpeed,
-            //     ySpeed,
-            //     bulletType,
-            //     bulletMoveType,
-            //     attackPower,
-            //     explosionSize,
-            //     bulletSize,
-            //     bulletSpeed,
-            //     (bullet) => this.game.findBulletClosestTarget(bullet)
-            // );
-        }
-        
-    }
 
 }
 
